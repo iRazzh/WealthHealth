@@ -4,8 +4,11 @@
     justify-content: center;
 }
 .form-create-employee section{
-    width: 75%;
+    width: 51%;
     margin: 1rem 0;
+}
+.form-create-employee section div.react-date-picker{
+    width: 100%;
 }
 .form-create-employee input{
     width: 100%;

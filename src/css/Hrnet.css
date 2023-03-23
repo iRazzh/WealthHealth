@@ -1,9 +1,9 @@
-main{
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+main.hrnet{
+    max-width: 100%;
+    margin: 0 0 0 300px;
+    padding-top: 50px;
 }
-main.homepage button{
+main.hrnet button.btn-employees{
     margin: 2rem 0;
     padding: 15px 25px;
     border-radius: 10px;
@@ -12,6 +12,6 @@ main.homepage button{
     text-transform: uppercase;
     font-size: 25px;
 }
-main.homepage button:hover{
+main.hrnet button.btn-employees:hover{
     background-color: lightgreen;
 }

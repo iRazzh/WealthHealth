@@ -1,0 +1,12 @@
+header.header-hrnet{
+    background-color: blanchedalmond;
+    text-align: left;
+    display: inline-block;
+    width: 300px;
+    position: absolute;
+    margin: 0;
+}
+header.header-hrnet img.logo-header-hrnet{
+    mix-blend-mode: multiply;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+section.navbar-employees{
+    width: 300px;
+    position: absolute;
+    top: 230px;
+    background-color: blanchedalmond;
+    text-align: center;
+    padding-top: 2rem;
+    height: 100%;
+}
+section.navbar-employees h2{
+    margin-bottom: 2rem;
+}
+section.navbar-employees article{
+    margin: 2rem;
+}
