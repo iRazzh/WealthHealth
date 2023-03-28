@@ -8,7 +8,7 @@ export default function Homepage() {
         <>
             <Header />
             <main className="homepage">
-
+                
                 <Link to="/hrnet"><button>Accéder à HRNET</button></Link>
             </main>
         </>

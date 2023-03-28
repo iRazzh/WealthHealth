@@ -1,9 +1,17 @@
 import '../css/CreateEmployee.css';
-import DatePicker from 'react-date-picker'
+import DatePicker from 'react-date-picker';
+import Select from 'react-select';
 import { useState } from 'react';
+
+const options = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
 
 export default function CreateEmployee() {
     const [value, onChange] = useState(new Date());
+    const [selectedOption, setSelectedOption] = useState(null);
 
     return(
         <>
@@ -42,7 +50,11 @@ export default function CreateEmployee() {
 
                 <section>
                     <label htmlFor="State">State</label>
-                    <input id="State" type="text" />
+                    <Select
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                    />
                 </section>
                 
                 <section>
@@ -52,7 +64,11 @@ export default function CreateEmployee() {
 
                 <section>
                     <label htmlFor="Department">Department</label>
-                    <input id="Department" type="text" />
+                    <Select
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                    />
                 </section>
             </form>
         </>
