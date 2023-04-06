@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Homepage from "../pages/Homepage";
 import Hrnet from '../pages/Hrnet';
-import Employees from '../pages/Employees';
 
 export default function App() {
   return (
@@ -11,7 +10,6 @@ export default function App() {
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/hrnet" element={<Hrnet />} />
-        <Route path="/current-employees" element={<Employees />} />
         <Route path="*" element={<p>404</p>} />
       </Routes>
     </Router>
