@@ -4,6 +4,8 @@ import SidebarEmployee from "../components/SidebarEmployee"
 
 import DataTable from 'react-data-table-component';
 
+import { Modal } from "react-modal-component-tool";
+
 // A super simple expandable component.
 const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
 
@@ -81,7 +83,7 @@ export default function Hrnet() {
             <main className="employees">
                 {/* onClick, on récupère la modale pour créer un employé  */}
                 <button>Create Employee</button>
-                
+                <Modal addCSS="testMVP" />
                 <h1>Current Employees</h1>
                 <DataTable
                     columns={columns}
