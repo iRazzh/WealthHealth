@@ -3,7 +3,8 @@ header.header-hrnet{
     text-align: left;
     display: inline-block;
     width: 300px;
-    position: absolute;
+    height: 230px;
+    position: fixed;
     margin: 0;
 }
 header.header-hrnet img.logo-header-hrnet{

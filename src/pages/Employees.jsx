@@ -1,9 +1,12 @@
-import "../css/Hrnet.css"
-import HeaderHRNET from "../components/HeaderHrnet"
-import SidebarEmployee from "../components/SidebarEmployee"
+import "../css/Employees.css"
+import "../css/Modal.css"
+import HeaderEmployees from "../components/HeaderEmployees"
+import SidebarEmployees from "../components/SidebarEmployees"
+import UserConnected from "../components/UserConnected"
+import CreateEmployee from "../components/CreateEmployee";
 
+import { useState } from "react";
 import DataTable from 'react-data-table-component';
-
 import { Modal } from "react-modal-component-tool";
 
 // A super simple expandable component.
@@ -76,14 +79,25 @@ const data = [
 ]
 
 export default function Hrnet() {
+    const [ setModalOpen, isModalOpen ] = useState(false);
+    const handleClick = () => {
+        isModalOpen(!setModalOpen);
+    }
     return(
         <>
-            <HeaderHRNET />
-            <SidebarEmployee />
+            <HeaderEmployees />
+            <SidebarEmployees />
             <main className="employees">
-                {/* onClick, on récupère la modale pour créer un employé  */}
-                <button>Create Employee</button>
-                <Modal addCSS="testMVP" />
+                <UserConnected onClick={handleClick} setModalOpen={setModalOpen} toggleText={setModalOpen ? null : "Create an employee"}  />
+                {setModalOpen ? 
+                    <>
+                        <Modal addCSS="testMVP">
+                            <CreateEmployee onClick={handleClick} />
+                        </Modal>
+                    </>
+                    :
+                    null
+                }
                 <h1>Current Employees</h1>
                 <DataTable
                     columns={columns}

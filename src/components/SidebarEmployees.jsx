@@ -1,4 +1,4 @@
-import "../css/SidebarEmployee.css"
+import "../css/SidebarEmployees.css"
 
 export default function SidebarEmployee() {
     return(

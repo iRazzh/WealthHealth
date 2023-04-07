@@ -1,11 +1,11 @@
 section.navbar-employees{
     width: 300px;
-    position: absolute;
+    position: fixed;
     top: 230px;
     background-color: blanchedalmond;
     text-align: center;
     padding-top: 2rem;
-    height: 100%;
+    height: calc(100vh - 230px);
 }
 section.navbar-employees h2{
     margin-bottom: 2rem;

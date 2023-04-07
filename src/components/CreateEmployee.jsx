@@ -9,14 +9,14 @@ const options = [
     { value: 'vanilla', label: 'Vanilla' },
 ];
 
-export default function CreateEmployee() {
+export default function CreateEmployee(props) {
     const [value, onChange] = useState(new Date());
     const [selectedOption, setSelectedOption] = useState(null);
 
     return(
         <>
             <h2>Create Employee</h2>
-
+            <button onClick={props.onClick}>Close</button>
             <form className="form-create-employee">
                 <section>
                     <label htmlFor="FirstName">First Name</label>
