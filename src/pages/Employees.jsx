@@ -4,8 +4,11 @@ import HeaderEmployees from "../components/HeaderEmployees"
 import SidebarEmployees from "../components/SidebarEmployees"
 import UserConnected from "../components/UserConnected"
 import CreateEmployee from "../components/CreateEmployee";
-
+import { useSelector } from "react-redux"
 import { useState } from "react";
+
+
+
 import DataTable from 'react-data-table-component';
 import { Modal } from "react-modal-component-tool";
 
@@ -51,38 +54,44 @@ const columns = [
     },
 ];
 
-const data = [
-    {
-        id: 1,
-        firstName: 'Tanguy',
-        lastName: 'Gerardin',
-        startDate: '03/16/2023',
-        department: 'Sales',
-        dateBirth: '03/17/2023',
-        street: 'Lyon',
-        city: 'Lyon',
-        state: 'AL',
-        zip: 6,
-    },
-    {
-        id: 2,
-        firstName: 'Tanguy2',
-        lastName: 'Gerardin2',
-        startDate: '03/16/2023',
-        department: 'Sales',
-        dateBirth: '03/17/2023',
-        street: 'Lyon',
-        city: 'Lyon',
-        state: 'AL',
-        zip: 6,
-    },
-]
 
 export default function Hrnet() {
     const [ setModalOpen, isModalOpen ] = useState(false);
     const handleClick = () => {
         isModalOpen(!setModalOpen);
     }
+
+    const employees = useSelector((state) => state.employees)
+    // const firstName = useSelector((state) => state.employees.firstName)
+    console.log(employees);
+    
+    const data = [
+        {
+            id: 1,
+            firstName: "Tanguy",
+            lastName: 'Gerardin',
+            startDate: '03/16/2023',
+            department: 'Sales',
+            dateBirth: '03/17/2023',
+            street: 'Lyon',
+            city: 'Lyon',
+            state: 'AL',
+            zip: 6,
+        },
+        {
+            id: 2,
+            firstName: 'Tanguy2',
+            lastName: 'Gerardin2',
+            startDate: '03/16/2023',
+            department: 'Sales',
+            dateBirth: '03/17/2023',
+            street: 'Lyon',
+            city: 'Lyon',
+            state: 'AL',
+            zip: 6,
+        },
+    ]
+    
     return(
         <>
             <HeaderEmployees />
@@ -106,7 +115,6 @@ export default function Hrnet() {
                     expandableRowsComponent={ExpandedComponent}
                 />
             </main>
-
         </>
     )
 }
