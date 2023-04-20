@@ -2,8 +2,26 @@
     position: absolute;
     z-index: 2;
     background-color: grey;
-    width: 90%;
-    margin: 0 calc(100% - 95%);
+    width: 80%;
+    margin: 0 calc(100% - 90%);
     top: 25%;
     border-radius: 10px;
+}
+.modal h2{
+    color: #517c0e;
+}
+.modal .title-btn{
+    background-color: antiquewhite;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    padding: 10px;
+}
+.modal .close-btn{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    padding: 7px;
+    background-color: antiquewhite;
+    color: red;
+    font-size: 25px;
 }

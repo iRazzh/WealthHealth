@@ -2,15 +2,61 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 3rem;
+    padding: 2rem 0;
 }
 .form-create-employee section{
-    width: 51%;
+    width: 100%;
     margin: 1rem 0;
 }
-.form-create-employee section div.react-date-picker{
+.form-create-employee .first-last-name{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
 }
-.form-create-employee input{
+.form-create-employee .first-last-name input{
+    width: 48%;
+    padding: 10px;
+}
+.form-create-employee .birth-start-date{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    border: 1px solid black;
+}
+.form-create-employee .birth-start-date > div{
+    width: 48%;
+}
+.form-create-employee .street-city{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.form-create-employee .street-city input{
+    width: 48%;
+    padding: 10px;
+}
+.form-create-employee .state-department{
+    display: flex;
+    justify-content: space-between;
+}
+.form-create-employee .state-department > div{
+    width: 48%;
+}
+.form-create-employee .zip{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.form-create-employee .zip label{
+    width: 100%;
+}
+.form-create-employee .zip input{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.form-create-employee .submit-btn{
+    padding: 15px;
+    background-color: antiquewhite;
 }

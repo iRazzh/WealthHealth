@@ -62,33 +62,26 @@ export default function Hrnet() {
     }
 
     const employees = useSelector((state) => state.employees)
-    // const firstName = useSelector((state) => state.employees.firstName)
-    console.log(employees);
+    console.log(employees)
+
+    const employeesFirstname = useSelector((state) => state.employees.firstName)
+    const employeesLastname = useSelector((state) => state.employees.lastName)
+    const employeesStreet = useSelector((state) => state.employees.street)
+    const employeesCity = useSelector((state) => state.employees.city)
+    const employeesZipCode = useSelector((state) => state.employees.zip)
     
     const data = [
         {
             id: 1,
-            firstName: "Tanguy",
-            lastName: 'Gerardin',
-            startDate: '03/16/2023',
-            department: 'Sales',
-            dateBirth: '03/17/2023',
-            street: 'Lyon',
-            city: 'Lyon',
-            state: 'AL',
-            zip: 6,
-        },
-        {
-            id: 2,
-            firstName: 'Tanguy2',
-            lastName: 'Gerardin2',
-            startDate: '03/16/2023',
-            department: 'Sales',
-            dateBirth: '03/17/2023',
-            street: 'Lyon',
-            city: 'Lyon',
-            state: 'AL',
-            zip: 6,
+            firstName: employeesFirstname,
+            lastName: employeesLastname,
+            startDate: null,
+            department: null,
+            dateBirth: null,
+            street: employeesStreet,
+            city: employeesCity,
+            state: null,
+            zip: employeesZipCode,
         },
     ]
     
@@ -98,6 +91,7 @@ export default function Hrnet() {
             <SidebarEmployees />
             <main className="employees">
                 <UserConnected onClick={handleClick} setModalOpen={setModalOpen} toggleText={setModalOpen ? null : "Create an employee"}  />
+
                 {setModalOpen ? 
                     <>
                         <Modal addCSS="testMVP">
@@ -107,13 +101,11 @@ export default function Hrnet() {
                     :
                     null
                 }
+
                 <h1>Current Employees</h1>
-                <DataTable
-                    columns={columns}
-                    data={data}
-                    expandableRows
-                    expandableRowsComponent={ExpandedComponent}
-                />
+
+                <DataTable columns={columns} data={data} expandableRows  expandableRowsComponent={ExpandedComponent} />
+
             </main>
         </>
     )

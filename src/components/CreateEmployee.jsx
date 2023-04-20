@@ -5,12 +5,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { itsFirstname, itsLastname, itsDateOfBirth, itsStartDate, itsStreet, itsCity, itsState, itsZip, itsDepartment } from "../app/reducer"
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-];
-
 export default function CreateEmployee(props) {
     const [value, onChange] = useState(new Date());
     const [selectedOption, setSelectedOption] = useState(null);
@@ -28,93 +22,68 @@ export default function CreateEmployee(props) {
     const [department, setItsDepartment] = useState(itsDepartmentAdded);
 
     const dispatch = useDispatch();
-    
-    const employee = {
-        firstName,
-        lastName,
-        birthDate,
-        startDate,
-        street, 
-        city,
-        state,
-        zipCode,
-        department
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(itsFirstname(employee))
-        dispatch(itsLastname(employee))
-        dispatch(itsStreet(employee))
-        dispatch(itsCity(employee))
-        dispatch(itsZip(employee))
+        dispatch(itsFirstname(firstName))
+        dispatch(itsLastname(lastName))
+        dispatch(itsStreet(street))
+        dispatch(itsCity(city))
+        dispatch(itsZip(zipCode))
     }
 
-    console.log(employee)
-    /*console.log(itsFirstname(employee))
-    console.log(itsLastname(employee))
-    console.log(itsStreet(employee))
-    console.log(itsCity(employee))
-    console.log(itsZip(employee))*/
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' },
+    ];
     
     return(
         <>
-            <h2>Create Employee</h2>
-            <button onClick={props.onClick}>Close</button>
+            <section className="title-btn">
+                <h2>Create an employee</h2>
+                <button className="close-btn" onClick={props.onClick}>✖</button>
+            </section>
             <form className="form-create-employee" onSubmit={handleSubmit}>
-                <section>
-                    <label htmlFor="FirstName">First Name</label>
-                    <input id="FirstName" type="text" name="firstname" value={itsFirstnameAdded} onChange={(e) => setItsFirstName(e.target.value)}/>
-                </section>
-
-                <section>
-                    <label htmlFor="LastName">Last Name</label>
-                    <input id="LastName" type="text" name="lastname" value={itsLastnameAdded} onChange={(e) => setItsLastName(e.target.value)} />
+                <section className="first-last-name">
+                    <input id="FirstName" placeholder="Firstname" type="text" name="firstname" onChange={(e) => setItsFirstName(e.target.value)}/>
+                    <input id="LastName" placeholder="Lastname" type="text" name="lastname" onChange={(e) => setItsLastName(e.target.value)} />
                 </section>
                 
-                <section>
-                    <label htmlFor="DateOfBirth">Date of Birth</label>
-                    <DatePicker onChange={onChange} value={value} />
+                <section className="birth-start-date">
+                    <div>
+                        <label htmlFor="DateOfBirth">Date of Birth</label>
+                        <DatePicker onChange={onChange} value={value} />
+                    </div>
+
+                    <div>
+                        <label htmlFor="StartDate">Start Date</label>
+                        <DatePicker onChange={onChange} value={value} />
+                    </div>
                 </section>
 
-                <section>
-                    <label htmlFor="StartDate">Start Date</label>
-                    <DatePicker onChange={onChange} value={value} />
+                <section className="street-city">
+                    <input id="Street" placeholder="Street" type="text" name="street" onChange={(e) => setItsStreet(e.target.value)} />
+                    <input id="City" placeholder="City" type="text" name="city" onChange={(e) => setItsCity(e.target.value)} />
                 </section>
 
-                <section>
-                    <label htmlFor="Street">Street</label>
-                    <input id="Street" type="text" name="street" value={itsStreetAdded} onChange={(e) => setItsStreet(e.target.value)} />
-                </section>
-
-                <section>
-                    <label htmlFor="City">City</label>
-                    <input id="City" type="text" name="city" value={itsCityAdded} onChange={(e) => setItsCity(e.target.value)} />
-                </section>
-
-                <section>
-                    <label htmlFor="State">State</label>
-                    <Select
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
-                        options={options}
-                    />
+                <section className="state-department">
+                    <div>
+                        <label htmlFor="State">State</label>
+                        <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+                    </div>
+                    
+                    <div>
+                        <label htmlFor="Department">Department</label>
+                        <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+                    </div>
                 </section>
                 
-                <section>
+                <section className="zip">
                     <label htmlFor="StartDate">Zip Code</label>
-                    <input id="Zip Code" type="number" name="zip" value={itsZipAdded} onChange={(e) => setItsZipCode(e.target.value)} />
+                    <input id="Zip Code" placeholder="0" type="number" name="zip" onChange={(e) => setItsZipCode(e.target.value)} />
                 </section>
 
-                <section>
-                    <label htmlFor="Department">Department</label>
-                    <Select
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
-                        options={options}
-                    />
-                </section>
-                <input type="submit" name="submit" value="submit" />
+                <input className="submit-btn" type="submit" name="submit" value="Submit" />
             </form>
         </>
     )
