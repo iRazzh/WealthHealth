@@ -2,34 +2,45 @@ import '../css/CreateEmployee.css';
 import DatePicker from 'react-date-picker';
 import Select from 'react-select';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { itsFirstname, itsLastname, itsDateOfBirth, itsStartDate, itsStreet, itsCity, itsState, itsZip, itsDepartment } from "../app/reducer"
+import { useDispatch } from 'react-redux';
+
+import { addEmployee } from "../app/reducer"
 
 export default function CreateEmployee(props) {
     const [value, onChange] = useState(new Date());
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const [ itsFirstnameAdded, itsLastnameAdded, itsDateOfBirthAdded, itsStartDateAdded, itsStreetAdded, itsCityAdded, itsStateAdded, itsZipAdded, itsDepartmentAdded ] = useSelector((state) => [ state.itsFirstname, state.itsLastname, state.itsDateOfBirth, state.itsStartDate, state.itsStreet, state.itsCity, state.itsState, state.itsZip, state.itsDepartment])
+    const [firstName, setItsFirstName] = useState("");
+    const [lastName, setItsLastName] = useState("");
+    const [birthDate, setItsBirthDate] = useState("");
+    const [startDate, setItsStartDate] = useState("");
+    const [street, setItsStreet] = useState("");
+    const [city, setItsCity] = useState("");
+    const [state, setItsState] = useState("");
+    const [zipCode, setItsZipCode] = useState("");
+    const [department, setItsDepartment] = useState("");
 
-    const [firstName, setItsFirstName] = useState(itsFirstnameAdded);
-    const [lastName, setItsLastName] = useState(itsLastnameAdded);
-    const [birthDate, setItsBirthDate] = useState(itsDateOfBirthAdded);
-    const [startDate, setItsStartDate] = useState(itsStartDateAdded);
-    const [street, setItsStreet] = useState(itsStreetAdded);
-    const [city, setItsCity] = useState(itsCityAdded);
-    const [state, setItsState] = useState(itsStateAdded);
-    const [zipCode, setItsZipCode] = useState(itsZipAdded);
-    const [department, setItsDepartment] = useState(itsDepartmentAdded);
+    const newEmployee = [
+        {
+            firstName,
+            lastName,
+            birthDate,
+            startDate,
+            street,
+            city,
+            state,
+            zipCode,
+            department,
+        },
+      ];
 
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(itsFirstname(firstName))
-        dispatch(itsLastname(lastName))
-        dispatch(itsStreet(street))
-        dispatch(itsCity(city))
-        dispatch(itsZip(zipCode))
+        dispatch(addEmployee({ newEmployee }));
     }
+
+
 
     const options = [
         { value: 'chocolate', label: 'Chocolate' },

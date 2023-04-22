@@ -61,29 +61,10 @@ export default function Hrnet() {
         isModalOpen(!setModalOpen);
     }
 
-    const employees = useSelector((state) => state.employees)
+    const employees = useSelector((state) => state?.employees.employeesList.map((employee) => {
+        return employee.newEmployee[0];
+    }))
     console.log(employees)
-
-    const employeesFirstname = useSelector((state) => state.employees.firstName)
-    const employeesLastname = useSelector((state) => state.employees.lastName)
-    const employeesStreet = useSelector((state) => state.employees.street)
-    const employeesCity = useSelector((state) => state.employees.city)
-    const employeesZipCode = useSelector((state) => state.employees.zip)
-    
-    const data = [
-        {
-            id: 1,
-            firstName: employeesFirstname,
-            lastName: employeesLastname,
-            startDate: null,
-            department: null,
-            dateBirth: null,
-            street: employeesStreet,
-            city: employeesCity,
-            state: null,
-            zip: employeesZipCode,
-        },
-    ]
     
     return(
         <>
@@ -104,7 +85,7 @@ export default function Hrnet() {
 
                 <h1>Current Employees</h1>
 
-                <DataTable columns={columns} data={data} expandableRows  expandableRowsComponent={ExpandedComponent} />
+                <DataTable columns={columns} data={employees} expandableRows  expandableRowsComponent={ExpandedComponent} />
 
             </main>
         </>
