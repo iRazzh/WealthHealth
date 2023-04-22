@@ -7,8 +7,6 @@ import CreateEmployee from "../components/CreateEmployee";
 import { useSelector } from "react-redux"
 import { useState } from "react";
 
-
-
 import DataTable from 'react-data-table-component';
 import { Modal } from "react-modal-component-tool";
 
@@ -50,7 +48,7 @@ const columns = [
     },
     {
         name: 'Zip Code',
-        selector: row => row.zip,
+        selector: row => row.zipCode,
     },
 ];
 
@@ -61,7 +59,7 @@ export default function Hrnet() {
         isModalOpen(!setModalOpen);
     }
 
-    const employees = useSelector((state) => state?.employees.employeesList.map((employee) => {
+    const employees = useSelector((state) => state?.employees.allEmployees.map((employee) => {
         return employee.newEmployee[0];
     }))
     console.log(employees)

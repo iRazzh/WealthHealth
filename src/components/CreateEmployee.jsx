@@ -40,8 +40,6 @@ export default function CreateEmployee(props) {
         dispatch(addEmployee({ newEmployee }));
     }
 
-
-
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
