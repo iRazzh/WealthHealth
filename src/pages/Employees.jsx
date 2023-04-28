@@ -59,6 +59,8 @@ export default function Hrnet() {
         isModalOpen(!setModalOpen);
     }
 
+    // We retrieve the "allEmployees" array established in the reducer which stores the values.
+    // We loop it to return each new employee.
     const employees = useSelector((state) => state?.employees.allEmployees.map((employee) => {
         return employee.newEmployee[0];
     }))

@@ -10,6 +10,7 @@ export default function CreateEmployee(props) {
     const [value, onChange] = useState(new Date());
     const [selectedOption, setSelectedOption] = useState(null);
 
+    // useState for all inputs values
     const [firstName, setItsFirstName] = useState("");
     const [lastName, setItsLastName] = useState("");
     const [birthDate, setItsBirthDate] = useState("");
@@ -20,6 +21,8 @@ export default function CreateEmployee(props) {
     const [zipCode, setItsZipCode] = useState("");
     const [department, setItsDepartment] = useState("");
 
+    // Retrieves the const from the useState and stores it in an array of objects.
+    // This is what will allow us to store the values of the new employee in Redux.
     const newEmployee = [
         {
             firstName,
@@ -32,11 +35,13 @@ export default function CreateEmployee(props) {
             zipCode,
             department,
         },
-      ];
-
+    ];
+    
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
+        // dispatch the "newEmployee" by using "addEmployee" from the reducer.
+        // We put "newEmployee" in the "payload" so that it can be taken by "addEmployee" to push datas into the "allEmployee" array.
         dispatch(addEmployee({ newEmployee }));
     }
 
