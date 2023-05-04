@@ -1,14 +1,18 @@
 import '../css/CreateEmployee.css';
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 import Select from 'react-select';
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { dateFormat } from "../app/formats"
+// import { dataStates, dataDepartments } from "../app/datas";
 
 import { addEmployee } from "../app/reducer"
 
 export default function CreateEmployee(props) {
-    const [value, onChange] = useState(new Date());
-    const [selectedOption, setSelectedOption] = useState(null);
 
     // useState for all inputs values
     const [firstName, setItsFirstName] = useState("");
@@ -17,9 +21,9 @@ export default function CreateEmployee(props) {
     const [startDate, setItsStartDate] = useState("");
     const [street, setItsStreet] = useState("");
     const [city, setItsCity] = useState("");
-    const [state, setItsState] = useState("");
+    // const [state, setItsState] = useState(null);
+    // const [department, setItsDepartment] = useState(null);
     const [zipCode, setItsZipCode] = useState("");
-    const [department, setItsDepartment] = useState("");
 
     // Retrieves the const from the useState and stores it in an array of objects.
     // This is what will allow us to store the values of the new employee in Redux.
@@ -27,15 +31,17 @@ export default function CreateEmployee(props) {
         {
             firstName,
             lastName,
-            birthDate,
-            startDate,
+            birthDate: dateFormat(new Date(birthDate)),
+            startDate: dateFormat(new Date(startDate)),
             street,
             city,
-            state,
+            // state,
+            // department,
             zipCode,
-            department,
         },
     ];
+
+    // console.log(state)
     
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
@@ -44,12 +50,6 @@ export default function CreateEmployee(props) {
         // We put "newEmployee" in the "payload" so that it can be taken by "addEmployee" to push datas into the "allEmployee" array.
         dispatch(addEmployee({ newEmployee }));
     }
-
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' },
-    ];
     
     return(
         <>
@@ -66,12 +66,12 @@ export default function CreateEmployee(props) {
                 <section className="birth-start-date">
                     <div>
                         <label htmlFor="DateOfBirth">Date of Birth</label>
-                        <DatePicker onChange={onChange} value={value} />
-                    </div>
+                        <DatePicker selected={birthDate} onChange={(date) => setItsBirthDate(date)} showIcon dateFormat={"dd/MM/yyyy"} />
+                    </div>      
 
                     <div>
                         <label htmlFor="StartDate">Start Date</label>
-                        <DatePicker onChange={onChange} value={value} />
+                        <DatePicker selected={startDate} onChange={(date) => setItsStartDate(date)} showIcon dateFormat={"dd/MM/yyyy"} />
                     </div>
                 </section>
 
@@ -83,12 +83,12 @@ export default function CreateEmployee(props) {
                 <section className="state-department">
                     <div>
                         <label htmlFor="State">State</label>
-                        <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+                        {/* <Select onChange={setItsState} options={dataStates} value={dataStates.label}/> */}
                     </div>
                     
                     <div>
                         <label htmlFor="Department">Department</label>
-                        <Select defaultValue={selectedOption} onChange={setSelectedOption} options={options} />
+                        {/* <Select onChange={setItsDepartment} options={dataDepartments} /> */}
                     </div>
                 </section>
                 

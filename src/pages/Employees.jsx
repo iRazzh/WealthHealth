@@ -23,16 +23,12 @@ const columns = [
         selector: row => row.lastName,
     },
     {
+        name: 'Date of Birth',
+        selector: row => row.birthDate,
+    },
+    {
         name: 'Start Date',
         selector: row => row.startDate,
-    },
-    {
-        name: 'Department',
-        selector: row => row.department,
-    },
-    {
-        name: 'Date of Birth',
-        selector: row => row.dateBirth,
     },
     {
         name: 'Street',
@@ -45,6 +41,10 @@ const columns = [
     {
         name: 'State',
         selector: row => row.state,
+    },
+    {
+        name: 'Department',
+        selector: row => row.department,
     },
     {
         name: 'Zip Code',
