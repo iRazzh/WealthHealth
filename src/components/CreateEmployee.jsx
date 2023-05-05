@@ -1,16 +1,13 @@
 import '../css/CreateEmployee.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-
-import Select from 'react-select';
+import Select from "react-select";
 
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { dateFormat } from "../app/formats"
-// import { dataStates, dataDepartments } from "../app/datas";
-
 import { addEmployee } from "../app/reducer"
+import { dateFormat } from "../app/formats"
+import { dataStates, dataDepartments } from "../app/datas";
 
 export default function CreateEmployee(props) {
 
@@ -21,8 +18,8 @@ export default function CreateEmployee(props) {
     const [startDate, setItsStartDate] = useState("");
     const [street, setItsStreet] = useState("");
     const [city, setItsCity] = useState("");
-    // const [state, setItsState] = useState(null);
-    // const [department, setItsDepartment] = useState(null);
+    const [state, setItsState] = useState(null);
+    const [department, setItsDepartment] = useState(null);
     const [zipCode, setItsZipCode] = useState("");
 
     // Retrieves the const from the useState and stores it in an array of objects.
@@ -35,14 +32,19 @@ export default function CreateEmployee(props) {
             startDate: dateFormat(new Date(startDate)),
             street,
             city,
-            // state,
-            // department,
+            state,
+            department,
             zipCode,
         },
     ];
 
-    // console.log(state)
-    
+    const handleChange = (selectedOption) => {
+        setItsState(selectedOption.label);
+    };
+    const handleChangeDepartment = (selectedOption) => {
+        setItsDepartment(selectedOption.label);
+    };
+
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -83,12 +85,12 @@ export default function CreateEmployee(props) {
                 <section className="state-department">
                     <div>
                         <label htmlFor="State">State</label>
-                        {/* <Select onChange={setItsState} options={dataStates} value={dataStates.label}/> */}
+                        <Select options={dataStates} onChange={handleChange} />
                     </div>
                     
                     <div>
                         <label htmlFor="Department">Department</label>
-                        {/* <Select onChange={setItsDepartment} options={dataDepartments} /> */}
+                        <Select options={dataDepartments} onChange={handleChangeDepartment} />
                     </div>
                 </section>
                 

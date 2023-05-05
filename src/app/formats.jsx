@@ -1,4 +1,4 @@
-// Formating for FUCKING DATE :)
+// Formats for date
 export const dateFormat = (date) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;

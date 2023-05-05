@@ -10,48 +10,10 @@ import { useState } from "react";
 import DataTable from 'react-data-table-component';
 import { Modal } from "react-modal-component-tool";
 
+import { columnsTable } from "../app/datas";
+
 // A super simple expandable component.
 const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
-
-const columns = [
-    {
-        name: 'First Name',
-        selector: row => row.firstName,
-    },
-    {
-        name: 'Last Name',
-        selector: row => row.lastName,
-    },
-    {
-        name: 'Date of Birth',
-        selector: row => row.birthDate,
-    },
-    {
-        name: 'Start Date',
-        selector: row => row.startDate,
-    },
-    {
-        name: 'Street',
-        selector: row => row.street,
-    },
-    {
-        name: 'City',
-        selector: row => row.city,
-    },
-    {
-        name: 'State',
-        selector: row => row.state,
-    },
-    {
-        name: 'Department',
-        selector: row => row.department,
-    },
-    {
-        name: 'Zip Code',
-        selector: row => row.zipCode,
-    },
-];
-
 
 export default function Hrnet() {
     const [ setModalOpen, isModalOpen ] = useState(false);
@@ -85,7 +47,7 @@ export default function Hrnet() {
 
                 <h1>Current Employees</h1>
 
-                <DataTable columns={columns} data={employees} expandableRows  expandableRowsComponent={ExpandedComponent} />
+                <DataTable columns={columnsTable} data={employees} expandableRows  expandableRowsComponent={ExpandedComponent} />
 
             </main>
         </>
