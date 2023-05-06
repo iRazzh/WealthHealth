@@ -8,12 +8,8 @@ export default function UserConnected(props) {
                 <img src={User} alt="Logo d'un utilisateur." />
                 <p>John Doe</p>
             </div>
-            {
-                props.setModalOpen ? 
-                    null
-                :
-                <button onClick={props.onClick}>{props.toggleText}</button>
-            }
+            <button onClick={props.onClick}>{props.toggleText}</button>
+
         </section>
     )
 }

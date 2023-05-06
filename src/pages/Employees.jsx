@@ -1,8 +1,6 @@
 import "../css/Employees.css"
 import "../css/Modal.css"
 import HeaderEmployees from "../components/HeaderEmployees"
-import SidebarEmployees from "../components/SidebarEmployees"
-import UserConnected from "../components/UserConnected"
 import CreateEmployee from "../components/CreateEmployee";
 import { useSelector } from "react-redux"
 import { useState } from "react";
@@ -11,9 +9,6 @@ import DataTable from 'react-data-table-component';
 import { Modal } from "react-modal-component-tool";
 
 import { columnsTable } from "../app/datas";
-
-// A super simple expandable component.
-const ExpandedComponent = ({ data }) => <pre>{JSON.stringify(data, null, 2)}</pre>;
 
 export default function Hrnet() {
     const [ setModalOpen, isModalOpen ] = useState(false);
@@ -26,15 +21,11 @@ export default function Hrnet() {
     const employees = useSelector((state) => state?.employees.allEmployees.map((employee) => {
         return employee.newEmployee[0];
     }))
-    console.log(employees)
     
     return(
         <>
-            <HeaderEmployees />
-            <SidebarEmployees />
+            <HeaderEmployees handleClick={handleClick} setModalOpen={setModalOpen} />
             <main className="employees">
-                <UserConnected onClick={handleClick} setModalOpen={setModalOpen} toggleText={setModalOpen ? null : "Create an employee"}  />
-
                 {setModalOpen ? 
                     <>
                         <Modal addCSS="testMVP">
@@ -47,7 +38,7 @@ export default function Hrnet() {
 
                 <h1>Current Employees</h1>
 
-                <DataTable columns={columnsTable} data={employees} expandableRows  expandableRowsComponent={ExpandedComponent} />
+                <DataTable columns={columnsTable} data={employees} />
 
             </main>
         </>

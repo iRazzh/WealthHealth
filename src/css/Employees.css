@@ -1,6 +1,13 @@
 main.employees{
+    padding-top: 20px;
     max-width: 100%;
     margin: 0 0 0 300px;
     text-align: center;
     position: relative;
+}
+main.employees h1{
+    margin-bottom: 2rem;
+}
+main.employees .sc-fbJfA{
+    font-size:14px;
 }

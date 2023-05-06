@@ -61,42 +61,46 @@ export default function CreateEmployee(props) {
             </section>
             <form className="form-create-employee" onSubmit={handleSubmit}>
                 <section className="first-last-name">
-                    <input id="FirstName" placeholder="Firstname" type="text" name="firstname" onChange={(e) => setItsFirstName(e.target.value)}/>
-                    <input id="LastName" placeholder="Lastname" type="text" name="lastname" onChange={(e) => setItsLastName(e.target.value)} />
+                    <input required id="FirstName" placeholder="First Name" type="text" name="firstname" onChange={(e) => setItsFirstName(e.target.value)}/>
+                    <input required id="LastName" placeholder="Last Name" type="text" name="lastname" onChange={(e) => setItsLastName(e.target.value)} />
                 </section>
+
+                <hr />
                 
                 <section className="birth-start-date">
                     <div>
-                        <label htmlFor="DateOfBirth">Date of Birth</label>
-                        <DatePicker selected={birthDate} onChange={(date) => setItsBirthDate(date)} showIcon dateFormat={"dd/MM/yyyy"} />
+                        <DatePicker required selected={birthDate} onChange={(date) => setItsBirthDate(date)} showIcon dateFormat={"dd/MM/yyyy"} placeholderText='Date of Birth'/>
                     </div>      
 
                     <div>
-                        <label htmlFor="StartDate">Start Date</label>
-                        <DatePicker selected={startDate} onChange={(date) => setItsStartDate(date)} showIcon dateFormat={"dd/MM/yyyy"} />
+                        <DatePicker required selected={startDate} onChange={(date) => setItsStartDate(date)} showIcon dateFormat={"dd/MM/yyyy"} placeholderText='Start Date' />
                     </div>
                 </section>
 
+                <hr />
+
                 <section className="street-city">
-                    <input id="Street" placeholder="Street" type="text" name="street" onChange={(e) => setItsStreet(e.target.value)} />
-                    <input id="City" placeholder="City" type="text" name="city" onChange={(e) => setItsCity(e.target.value)} />
+                    <input required id="Street" placeholder="Street" type="text" name="street" onChange={(e) => setItsStreet(e.target.value)} />
+                    <input required id="City" placeholder="City" type="text" name="city" onChange={(e) => setItsCity(e.target.value)} />
                 </section>
+
+                <hr />
 
                 <section className="state-department">
                     <div>
                         <label htmlFor="State">State</label>
-                        <Select options={dataStates} onChange={handleChange} />
+                        <Select required options={dataStates} onChange={handleChange} />
                     </div>
                     
                     <div>
                         <label htmlFor="Department">Department</label>
-                        <Select options={dataDepartments} onChange={handleChangeDepartment} />
+                        <Select required options={dataDepartments} onChange={handleChangeDepartment} />
                     </div>
                 </section>
                 
                 <section className="zip">
                     <label htmlFor="StartDate">Zip Code</label>
-                    <input id="Zip Code" placeholder="0" type="number" name="zip" onChange={(e) => setItsZipCode(e.target.value)} />
+                    <input required id="Zip Code" placeholder="0" type="number" name="zip" onChange={(e) => setItsZipCode(e.target.value)} />
                 </section>
 
                 <input className="submit-btn" type="submit" name="submit" value="Submit" />

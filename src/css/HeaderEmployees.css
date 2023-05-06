@@ -3,11 +3,47 @@ header.header-hrnet{
     text-align: left;
     display: inline-block;
     width: 300px;
-    height: 230px;
+    height: 100%;
     position: fixed;
     margin: 0;
 }
 header.header-hrnet img.logo-header-hrnet{
     mix-blend-mode: multiply;
     width: 100%;
+}
+header hr{
+    border-bottom: 1px solid black;
+    margin: 2rem 0;
+}
+header .header-employee-added{
+    margin: 0 1rem;
+    text-align: center;
+}
+header .header-employee-added h2{
+    margin-bottom: 1rem;
+}
+header .header-employee-added article{
+    margin-bottom: 2rem;
+}
+header .header-employee-added article p{
+    margin-bottom: .5rem;
+}
+header .header-employee-added article p:last-child{
+    margin-bottom: 0;
+}
+header .header-employee-added article div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+header .header-employee-added article div p{
+    margin: 0 .5rem 0 0;
+    font-size: 20px;
+}
+header .header-employee-added article div p:last-child{
+    margin-right: 0;
+}
+header .header-employee-added article .last-employee-zip{
+    font-style: italic;
 }

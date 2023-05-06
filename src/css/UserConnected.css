@@ -1,14 +1,16 @@
 .employee-connected{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 2rem;
-    margin: 0 1rem 3rem;
+    margin: 0 1rem 2rem;
     position: relative;
 }
 .employee-connected div{
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 .employee-connected p{
     margin: 0 1rem;
@@ -18,16 +20,14 @@
     height: 30px;
 }
 .employee-connected button{
-    position: absolute;
-    right: 0;
     padding: 10px 25px;
     border-radius: 10px;
     cursor: pointer;
-    background-color: green;
-    text-transform: uppercase;
+    background-color: #5A6F08;
     font-size: 20px;
-    color: white;
+    color: rgb(255, 251, 243);
+    width: 100%;
 }
 .employee-connected button:hover{
-    background-color: lightgreen;
+    background-color: #92AD17;
 }
