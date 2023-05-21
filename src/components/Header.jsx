@@ -1,6 +1,10 @@
 import "../css/Header.css";
 import LogoHeader from "../assets/logo-wealthhealth.webp"
 
+/**
+ * Allows you to display the very first header of the application
+ * @returns 'Header' component
+ */
 export default function Header() {
     return(
         <>

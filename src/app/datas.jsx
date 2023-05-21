@@ -1,3 +1,7 @@
+/**
+ * Configuration for DataTable plug-in 
+ * react-data-table-component 
+*/
 export const columnsTable = [
     {
         name: 'First Name',
@@ -45,7 +49,9 @@ export const columnsTable = [
         sortable: true,
     },
 ];
-
+/**
+ *  Data for all states in the US
+*/
 export const dataStates = [
     {
         label: "Alabama",
@@ -285,6 +291,9 @@ export const dataStates = [
     }
 ];
 
+/**
+ * Data for all company departments 
+*/
 export const dataDepartments = [
     {
         label: "Sales",

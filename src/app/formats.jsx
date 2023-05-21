@@ -1,4 +1,8 @@
-// Formats for date
+/**
+ * Allows you to have a precise and personalised date format
+ * @param {*} date : Will allow to pass in parameters the "new Date()"
+ * @returns  Custom date format | day/month/year
+ */
 export const dateFormat = (date) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;

@@ -2,13 +2,17 @@ import '../css/CreateEmployee.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
-
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from "../app/reducer"
 import { dateFormat } from "../app/formats"
 import { dataStates, dataDepartments } from "../app/datas";
 
+/**
+ * Will allow to create an employee
+ * @param {*} props | The use of props for this component will be for the button to use a toggle to open or close the modal 
+ * @returns 'CreateEmployee' component
+ */
 export default function CreateEmployee(props) {
 
     // useState for all inputs values
@@ -64,9 +68,7 @@ export default function CreateEmployee(props) {
                     <input required id="FirstName" placeholder="First Name" type="text" name="firstname" onChange={(e) => setItsFirstName(e.target.value)}/>
                     <input required id="LastName" placeholder="Last Name" type="text" name="lastname" onChange={(e) => setItsLastName(e.target.value)} />
                 </section>
-
-                <hr />
-                
+                <hr />    
                 <section className="birth-start-date">
                     <div>
                         <DatePicker required selected={birthDate} onChange={(date) => setItsBirthDate(date)} showIcon dateFormat={"dd/MM/yyyy"} placeholderText='Date of Birth'/>
@@ -76,16 +78,12 @@ export default function CreateEmployee(props) {
                         <DatePicker required selected={startDate} onChange={(date) => setItsStartDate(date)} showIcon dateFormat={"dd/MM/yyyy"} placeholderText='Start Date' />
                     </div>
                 </section>
-
                 <hr />
-
                 <section className="street-city">
                     <input required id="Street" placeholder="Street" type="text" name="street" onChange={(e) => setItsStreet(e.target.value)} />
                     <input required id="City" placeholder="City" type="text" name="city" onChange={(e) => setItsCity(e.target.value)} />
                 </section>
-
                 <hr />
-
                 <section className="state-department">
                     <div>
                         <label htmlFor="State">State</label>
@@ -97,12 +95,10 @@ export default function CreateEmployee(props) {
                         <Select required options={dataDepartments} onChange={handleChangeDepartment} />
                     </div>
                 </section>
-                
                 <section className="zip">
                     <label htmlFor="StartDate">Zip Code</label>
                     <input required id="Zip Code" placeholder="0" type="number" name="zip" onChange={(e) => setItsZipCode(e.target.value)} />
                 </section>
-
                 <input className="submit-btn" type="submit" name="submit" value="Submit" />
             </form>
         </>
