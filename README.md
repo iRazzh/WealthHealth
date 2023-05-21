@@ -38,6 +38,4 @@ npm start
 
 Une fois ces commandes exécutées, ouvrez votre application sur le port : 
 
-```bash
 [localhost:3000](http://localhost:3000)
-```
