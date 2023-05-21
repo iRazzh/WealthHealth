@@ -11,7 +11,8 @@ main.homepage button{
     background-color: green;
     text-transform: uppercase;
     font-size: 25px;
+    color: white;
 }
 main.homepage button:hover{
-    background-color: lightgreen;
+    background-color: rgb(92, 153, 92);
 }

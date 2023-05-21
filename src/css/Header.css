@@ -4,6 +4,7 @@ header {
 }
 @media screen  and (min-width: 1200px) {
     header .logo-homepage{
-        width: 400px;
+        height: auto;
+        max-width: 100%;
     }
 }

@@ -9,8 +9,8 @@ export default function HeaderHrnet(props) {
 
     const employees = useSelector((state) => state.employees.allEmployees)
 
-    const lastEmployee = employees[employees.length - 1].newEmployee[0];
-    const secondToLastEmployee = employees[employees.length - 2].newEmployee[0];
+    const lastEmployee = employees[employees.length - 1]?.newEmployee[0];
+    const secondToLastEmployee = employees[employees.length - 2]?.newEmployee[0];
 
     return(
         <>
@@ -24,8 +24,8 @@ export default function HeaderHrnet(props) {
                 <section className="header-employee-added">
                     <h2>Last employees added</h2>
 
-                    <LastEmployees firstName={lastEmployee.firstName} lastName={lastEmployee.lastName} department={lastEmployee.department} zipCode={lastEmployee.zipCode}/>
-                    <LastEmployees firstName={secondToLastEmployee.firstName} lastName={secondToLastEmployee.lastName} department={secondToLastEmployee.department} zipCode={secondToLastEmployee.zipCode}/>
+                    <LastEmployees firstName={lastEmployee?.firstName} lastName={lastEmployee?.lastName} department={lastEmployee?.department} zipCode={lastEmployee?.zipCode}/>
+                    <LastEmployees firstName={secondToLastEmployee?.firstName} lastName={secondToLastEmployee?.lastName} department={secondToLastEmployee?.department} zipCode={secondToLastEmployee?.zipCode}/>
                 </section>
 
 
