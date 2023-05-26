@@ -1,33 +1,33 @@
 # Wealth Health
 
-Faites passer une librairie jQuery vers React.
-Quatorzième projet d'OpenClassrooms sur la formation "Développeur Front-End".
+Upgrade a jQuery library to React.
+Fourteenth OpenClassrooms project on "Front-End Developer" training.
 
-## Conversion du projet HRNet
+## Conversion of the HRNet project
 
-- Nouvelle version de la page "Create Employee"
-- Nouvelle version de la page "Employee List"
-- Système de gestion d'état
-- Certaine cohérence au niveau du style de l'application.
-- Seuls des tests manuels sont nécessaires. 
+- New version of the "Create Employee" page
+- New version of the "Employee List" page
+- Status management system
+- Certain consistency in the style of the application.
+- Only manual tests required. 
 
-## Les différents plugins du projet en React
+## The project's various plugins in React
 
 - [react-data-table-component](https://react-data-table-component.netlify.app/?path=/story/getting-started-intro--page) : React Data Table Component
 - [react-datepicker](https://www.npmjs.com/package/react-datepicker) : React Date Picker
 - [react-select](https://www.npmjs.com/package/react-select) : React Select
 
-## Plugin conçu par moi-même pour le projet 
+## Plugin designed by myself for the project
 
 - [react-modal-component-tool](https://www.npmjs.com/package/react-modal-component-tool) : React Modal Component Tool
 
-## Clone le projet
+## Clone the project
 
 ```bash
 git clone https://github.com/iRazzh/WealthHealth.git
 ```
 
-## Lancer le front 
+## Launching the front 
 
 ```bash
 npm i
@@ -36,6 +36,6 @@ npm i
 npm start
 ```
 
-Une fois ces commandes exécutées, ouvrez votre application sur le port : 
+Once these commands have been executed, open your application on the :
 
 [localhost:3000](http://localhost:3000)
