@@ -14,7 +14,6 @@ export default function UserConnected(props) {
                 <p>John Doe</p>
             </div>
             <button onClick={props.onClick}>{props.toggleText}</button>
-
         </section>
     )
 }
