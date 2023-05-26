@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.96a1543b.css",
+    "main.js": "/static/js/main.ce31d7d7.js",
+    "static/js/787.a7e5fa0a.chunk.js": "/static/js/787.a7e5fa0a.chunk.js",
+    "static/media/logo-wealthhealth.webp": "/static/media/logo-wealthhealth.8f7f483f3aaafabcab78.webp",
+    "index.html": "/index.html",
+    "main.96a1543b.css.map": "/static/css/main.96a1543b.css.map",
+    "main.ce31d7d7.js.map": "/static/js/main.ce31d7d7.js.map",
+    "787.a7e5fa0a.chunk.js.map": "/static/js/787.a7e5fa0a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96a1543b.css",
+    "static/js/main.ce31d7d7.js"
+  ]
+}
